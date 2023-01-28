@@ -31,10 +31,9 @@ fs.createReadStream("data/jocs_bcn.csv")
     });
     app.get("/", (req, res) => {
       //res.json(selectedData);
-      res.send("welcome to my app express 2222");
+      res.send("welcome to my app express server");
     });
   });
-
 
 const port = process.env.PORT || 3000;
 
@@ -44,5 +43,5 @@ app.listen(port, () => {
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin:*");
-
+  next();
 });
